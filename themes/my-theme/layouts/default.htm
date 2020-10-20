@@ -1,0 +1,58 @@
+description = "Default layout"
+
+[session]
+security = "all"
+
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        {% partial 'head' %}
+
+        {% styles %}
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        {% partial 'header' %}
+
+        {% page %}
+
+        {% partial 'footer' %}
+
+        <script src="{{ [
+            '@jquery',
+            '@framework',
+            '@framework.extras',
+
+            'vendor/popper.js/dist/umd/popper.min.js',
+
+            'vendor/bootstrap/js/dist/util.js',
+            'vendor/bootstrap/js/dist/alert.js',
+            'vendor/bootstrap/js/dist/button.js',
+            'vendor/bootstrap/js/dist/carousel.js',
+            'vendor/bootstrap/js/dist/collapse.js',
+            'vendor/bootstrap/js/dist/dropdown.js',
+            'vendor/bootstrap/js/dist/modal.js',
+            'vendor/bootstrap/js/dist/scrollspy.js',
+            'vendor/bootstrap/js/dist/tab.js',
+            'vendor/bootstrap/js/dist/tooltip.js',
+            'vendor/bootstrap/js/dist/popover.js',
+
+            'vendor/fastclick/lib/fastclick.js',
+            'vendor/bootbox/bootbox.js',
+
+            'assets/js/app.js']|theme }}"></script>
+
+        {% scripts %}
+
+        {% partial 'tracker' %}
+
+        {% partial 'flash' %}
+
+    </body>
+</html>
